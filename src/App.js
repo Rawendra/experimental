@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 
 function App() {
 
-  handleClick=()=>{
+  const handleClick=()=>{
     setTimeout(()=>{
       window.location.assign('http://www.africau.edu/images/default/sample.pdf')
     },1000)
@@ -21,7 +21,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={} >CLICK</button>
+        <button onClick={handleClick} >CLICK</button>
         <a
           className="App-link"
           href="https://reactjs.org"
