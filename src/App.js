@@ -6,7 +6,9 @@ function App() {
 
   const handleClick=()=>{
     setTimeout(()=>{
-      window.location.assign('http://www.africau.edu/images/default/sample.pdf')
+      const object=document.createElement('object');
+      object.setAttribute('data','http://www.africau.edu/images/default/sample.pdf')
+      document.body.append(object)
     },1000)
   }
 
