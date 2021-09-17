@@ -4,11 +4,11 @@ import {useState,useEffect} from 'react'
 
 function App() {
 
-  const handleClick=()=>{
+  consthandleClick=()=>{
     setTimeout(()=>{
-      const object=document.createElement('object');
-      object.setAttribute('data','http://www.africau.edu/images/default/sample.pdf')
-      document.body.append(object)
+     
+    
+      window.location.assign( 'http://www.africau.edu/images/default/sample.pdf' )
     },1000)
   }
 
