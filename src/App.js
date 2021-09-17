@@ -5,7 +5,10 @@ import {useState,useEffect} from 'react'
 function App() {
 
   useEffect(()=>{
+    console.log('calling useEffect')
+  setTimeout(()=>{
     window.location.assign('http://www.africau.edu/images/default/sample.pdf')
+  },1000)
   },[])
   return (
     <div className="App">
