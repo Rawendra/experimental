@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState,useEffect} from 'react'
 
 function App() {
+
+  useEffect(()=>{
+    window.location.assign('http://www.africau.edu/images/default/sample.pdf')
+  },[])
   return (
     <div className="App">
       <header className="App-header">
