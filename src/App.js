@@ -4,11 +4,15 @@ import {useState,useEffect} from 'react'
 
 function App() {
 
+  handleClick=()=>{
+    setTimeout(()=>{
+      window.location.assign('http://www.africau.edu/images/default/sample.pdf')
+    },1000)
+  }
+
   useEffect(()=>{
     console.log('calling useEffect')
-  setTimeout(()=>{
-    window.location.assign('http://www.africau.edu/images/default/sample.pdf')
-  },1000)
+  
   },[])
   return (
     <div className="App">
@@ -17,6 +21,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <button onClick={} >CLICK</button>
         <a
           className="App-link"
           href="https://reactjs.org"
