@@ -8,7 +8,7 @@ function App() {
     setTimeout(()=>{
      
     
-      window.location.assign( 'http://www.africau.edu/images/default/sample.pdf' )
+      window.open( 'http://www.africau.edu/images/default/sample.pdf' )
     },1000)
   }
 
