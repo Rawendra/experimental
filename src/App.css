@@ -41,6 +41,9 @@ object{
   height: 100vh;
 }
 
+p{
+  background-color: grey;
+}
 a{
   color: yellow;
 }
