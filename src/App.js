@@ -32,9 +32,6 @@ function App() {
     anchor.appendChild(anchorText);
     para.appendChild(anchor);
 
-    const pdfContainer = document.createElement("div");
-    pdfContainer.setAttribute("id", "pdfContainer");
-
     const pdfObject = document.createElement("object");
     pdfObject.setAttribute("data", url);
     pdfObject.setAttribute("type", "application/pdf");
@@ -45,7 +42,11 @@ function App() {
     pdfObject.addEventListener("error", () => {
       console.log("error occured");
     });
+    pdfObject.appendChild(para);
+
+    const pdfContainer = document.createElement("div");
     pdfContainer.appendChild(pdfObject);
+    pdfContainer.setAttribute("id", "pdfContainer");
     document.body.appendChild(pdfContainer);
   }, []);
   return (
