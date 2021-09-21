@@ -27,7 +27,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={handleClick}>CLICK</button>
+       
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -42,12 +42,13 @@ function App() {
           width="300"
           height="200"
         >
+          <p>it seems your device doesn't support this file type
           <a
             onClick={handleClickAnchor}
             href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
           >
             Please click here
-          </a>
+          </a></p>
         </object>
       </header>
     </div>
