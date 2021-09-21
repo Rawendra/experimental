@@ -1,21 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState,useEffect} from 'react'
+import logo from "./logo.svg";
+import "./App.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [showPdf, setShowPdf] = useState(false);
+  const handleClick = () => {
+    setShowPdf((state) => !state);
+  };
+  const handleClickAnchor = (e) => {
+    e.preventDefault();
+    alert("downloading the content");
 
-  const handleClick=()=>{
-    setTimeout(()=>{
-     
-    
-      window.location.assign( 'http://www.africau.edu/images/default/sample.pdf' )
-    },1000)
-  }
-
-  useEffect(()=>{
-    console.log('calling useEffect')
-  
-  },[])
+    setTimeout(() => {
+      window.location.assign(
+        "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      );
+    }, 500);
+  };
+  useEffect(() => {
+    console.log("calling useEffect");
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -23,7 +27,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={handleClick} >CLICK</button>
+        <button onClick={handleClick}>CLICK</button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -32,6 +36,19 @@ function App() {
         >
           Learn React
         </a>
+        <object
+          data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          type="application/pdf"
+          width="300"
+          height="200"
+        >
+          <a
+            onClick={handleClickAnchor}
+            href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          >
+            Please click here
+          </a>
+        </object>
       </header>
     </div>
   );
