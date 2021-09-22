@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 const url =
-  "https://www.orimi.com/pdf-test.pdf";
+  "http://www.africau.edu/images/default/sample.pdf";
 function App() {
   const [showPdf, setShowPdf] = useState(false);
   const handleClick = () => {
@@ -14,7 +14,7 @@ function App() {
 
     setTimeout(() => {
       window.location.assign(
-        "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+        url
       );
     }, 500);
   };
