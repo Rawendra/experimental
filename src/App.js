@@ -25,7 +25,7 @@ function App() {
   
   const handleLoad=()=>{
     console.log('load event triggered');
-    document.getElementById(pdfObject).attachShadow({mode:'open'})
+     
   }
   const handleError=()=>{
     console.log('Error event triggered')
