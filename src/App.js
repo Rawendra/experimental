@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 
+const url="http://www.africau.edu/images/default/sample.pdf"
 function App() {
   const [showPdf, setShowPdf] = useState(false);
   const handleClick = () => {
@@ -13,12 +14,13 @@ function App() {
 
     setTimeout(() => {
       window.location.assign(
-        "http://www.africau.edu/images/default/sample.pdf"
+        url
       );
     }, 500);
   };
   useEffect(() => {
     console.log("calling useEffect");
+    setShowPdf(true)
   }, []);
   return (
     <div className="App">
@@ -27,29 +29,21 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-       
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <object
-          data="http://www.africau.edu/images/default/sample.pdf"
+
+       { showPdf && <object
+          data={url}
           type="application/pdf"
-          width="300"
-          height="200"
         >
-          <p>it seems your device doesn't support this file type
-          <a
-            onClick={handleClickAnchor}
-            href="http://www.africau.edu/images/default/sample.pdf"
-          >
-            Please click here
-          </a></p>
-        </object>
+          <p>
+            it seems your device doesn't support this file type
+            <a
+              onClick={handleClickAnchor}
+              href={url}
+            >
+              Please click here
+            </a>
+          </p>
+        </object>}
       </header>
     </div>
   );
