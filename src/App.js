@@ -38,7 +38,7 @@ function App() {
         </p>
 
        
-          <object data={url} type="application/pdf" onLoad={handleLoad} onError={handleError}>
+          <object data={url+'#scrollbar=1&toolbar=1'} type="application/pdf" onLoad={handleLoad} onError={handleError}>
           {showPdf && (
             <p>
               {" "}
