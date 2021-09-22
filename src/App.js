@@ -24,7 +24,8 @@ function App() {
   }, []);
   
   const handleLoad=()=>{
-    console.log('load event triggered')
+    console.log('load event triggered');
+    document.getElementById(pdfObject).attachShadow({mode:'open'})
   }
   const handleError=()=>{
     console.log('Error event triggered')
@@ -38,7 +39,7 @@ function App() {
         </p>
 
        
-          <object data={url+'#scrollbar=1&toolbar=1'} type="application/pdf" onLoad={handleLoad} onError={handleError}>
+          <object data={url+'#scrollbar=1&toolbar=1'} id='pdfObject' type="application/pdf" onLoad={handleLoad} onError={handleError}>
           {showPdf && (
             <p>
               {" "}
