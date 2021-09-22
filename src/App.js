@@ -1,15 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState, useEffect ,useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 
-const url = "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf?hsLang=en";
+const url =
+  "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf?hsLang=en";
 function App() {
   const [showPdf, setShowPdf] = useState(false);
 
-  const objectRef=useRef(null)
- 
+  const objectRef = useRef(null);
 
-  
   const handleClickAnchor = (e) => {
     e.preventDefault();
     alert("downloading the content");
@@ -20,16 +19,19 @@ function App() {
   };
   useEffect(() => {
     console.log("calling useEffect");
+    console.log(navigator.userAgentData.mobile)
     setShowPdf(true);
   }, []);
-  
-  const handleLoad=()=>{
-    console.log('load event triggered');
-     
-  }
-  const handleError=()=>{
-    console.log('Error event triggered')
-  }
+
+  const handleLoad = () => {
+    console.log("load event triggered");
+    if (objectRef) {
+      console.log(objectRef);
+    }
+  };
+  const handleError = () => {
+    console.log("Error event triggered");
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -38,8 +40,13 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
 
-       
-          <object data={url+'#scrollbar=1&toolbar=1'} id='pdfObject' type="application/pdf" onLoad={handleLoad} onError={handleError}>
+        <object
+          data={url + "#scrollbar=1&toolbar=1"}
+          ref={objectRef}
+          type="application/pdf"
+          onLoad={handleLoad}
+          onError={handleError}
+        >
           {showPdf && (
             <p>
               {" "}
@@ -48,9 +55,8 @@ function App() {
                 Please click here
               </a>
             </p>
-              )}
-          </object>
-      
+          )}
+        </object>
       </header>
     </div>
   );
