@@ -1,27 +1,34 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useRef} from "react";
 
-const url="http://www.africau.edu/images/default/sample.pdf"
+const url = "http://www.africau.edu/images/default/sample.pdf";
 function App() {
   const [showPdf, setShowPdf] = useState(false);
-  const handleClick = () => {
-    setShowPdf((state) => !state);
-  };
+
+  const objectRef=useRef(null)
+ 
+
+  
   const handleClickAnchor = (e) => {
     e.preventDefault();
     alert("downloading the content");
 
     setTimeout(() => {
-      window.location.assign(
-        url
-      );
+      window.location.assign(url);
     }, 500);
   };
   useEffect(() => {
     console.log("calling useEffect");
-    setShowPdf(true)
+    setShowPdf(true);
   }, []);
+  
+  const handleLoad=()=>{
+    console.log('load event triggered')
+  }
+  const handleError=()=>{
+    console.log('Error event triggered')
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -30,20 +37,19 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
 
-       { showPdf && <object
-          data={url}
-          type="application/pdf"
-        >
-          <p>
-            it seems your device doesn't support this file type
-            <a
-              onClick={handleClickAnchor}
-              href={url}
-            >
-              Please click here
-            </a>
-          </p>
-        </object>}
+       
+          <object data={url} type="application/pdf" onLoad={handleLoad} onError={handleError}>
+          {showPdf && (
+            <p>
+              {" "}
+              it seems your device doesn't support this file type{" "}
+              <a onClick={handleClickAnchor} href={url}>
+                Please click here
+              </a>
+            </p>
+              )}
+          </object>
+      
       </header>
     </div>
   );
