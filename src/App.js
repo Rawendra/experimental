@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect ,useRef} from "react";
 
-const url = "http://www.africau.edu/images/default/sample.pdf";
+const url = "https://create-react-app-rawendra.herokuapp.com/";
 function App() {
   const [showPdf, setShowPdf] = useState(false);
 
