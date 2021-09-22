@@ -13,7 +13,7 @@ function App() {
 
     setTimeout(() => {
       window.location.assign(
-        "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+        "http://www.africau.edu/images/default/sample.pdf"
       );
     }, 500);
   };
@@ -37,7 +37,7 @@ function App() {
           Learn React
         </a>
         <object
-          data="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          data="http://www.africau.edu/images/default/sample.pdf"
           type="application/pdf"
           width="300"
           height="200"
@@ -45,7 +45,7 @@ function App() {
           <p>it seems your device doesn't support this file type
           <a
             onClick={handleClickAnchor}
-            href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+            href="http://www.africau.edu/images/default/sample.pdf"
           >
             Please click here
           </a></p>
