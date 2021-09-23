@@ -19,8 +19,8 @@ function App() {
   };
   useEffect(() => {
     console.log("calling useEffect");
-    console.log(navigator.userAgentData.mobile)
-    setShowPdf(true);
+    console.log();
+    setShowPdf(!navigator.userAgentData.mobile);
   }, []);
 
   const handleLoad = () => {
@@ -40,8 +40,8 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <object
-          data={url + "#scrollbar=1&toolbar=1"}
+        <iframe
+          src={url}
           ref={objectRef}
           type="application/pdf"
           onLoad={handleLoad}
@@ -56,7 +56,7 @@ function App() {
               </a>
             </p>
           )}
-        </object>
+        </iframe>
       </header>
     </div>
   );
